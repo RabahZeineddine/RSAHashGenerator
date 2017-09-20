@@ -7,8 +7,6 @@ app.use(bodyParser.json());
 var port = process.env.PORT || 3000;
 app.set('port', port);
 
-
-
 var fs = require('fs')
     , ursa = require('ursa')
     , crt
