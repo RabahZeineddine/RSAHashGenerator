@@ -1,6 +1,6 @@
 # RSA HASH Generator 
 
-This small app let you **encrypt/decrypt** using **ursa**
+This small app let you **encrypt/decrypt** using **[ursa](https://www.npmjs.com/package/ursa)**
 
 > It encrypts/decrypts using pair of generated key, RSA based.
 
@@ -56,7 +56,7 @@ The content body must be like:
 
 ```
     {
-        "hash": "<YOUR HASH KEY>"
+        "hash": "<YOUR HASH>"
     }
 ```
 
@@ -76,15 +76,54 @@ the response for this request will be like
     }
 ```
 
-> You might treat the response whereever you are going to use it, as if you encrypt a text with the plus sign, the decrypted text will have a space instead of "+". 
+> You might treat the response whereever you are going to use it, as if you encrypt a text with the plus sign "+", the decrypted text will have a space instead of "+". 
 
 ## Using local with your own keys
 
 Make sure you have a pair of keys and replace the **key.pub** with your **public key** and the **key.pem** with your **private key** 
 
+### key.pub / public key format
+
+```
+-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAjoa+Pb9L8Uq7h3rVri3A
+/v+yHTheOqUP1wgsj3H0WbbSCjxAUMBxmQeV9slBR4wFL+9kdi7TT0os8m0tsxv8
+ubLeGvMY2NBEWO45chhbUDkdZ5JGehatRhbRcEkbq31MLiSh4ri4B/GV7hoeTouH
+OhfY5lMgF9Wql98siRFre/KrSX4lnNeZqGiEk66OjU3IFEGa4OlES8NhUpFzXOLj
+nO5KkVmt4Ym2fH5TlOhMFkxMQq+Q3QZex0ctUiez5RjPt7cRB2McbHGeWNiTGPmv
+IAwTUwuSkoFx/YWgBu5U1VKyAXxkp64UG0yKiZ1bYu7gDmUUDr5nv2jE8SbAP6Xt
+UQIDAQAB
+-----END PUBLIC KEY-----
+```
+
+### key.pem / private key format
+
+```
+    -----BEGIN RSA PRIVATE KEY-----
+MIIEowIBAAKCAQEAjoa+Pb9L8Uq7h3rVri3A/v+yHTheOqUP1wgsj3H0WbbSCjxA
+UMBxmQeV9slBR4wFL+9kdi7TT0os8m0tsxv8ubLeGvMY2NBEWO45chhbUDkdZ5JG
+ehatRhbRcEkbq31MLiSh4ri4B/GV7hoeTouHOhfY5lMgF9Wql98siRFre/KrSX4l
+nNeZqGiEk66OjU3IFEGa4OlES8NhUpFzXOLjnO5KkVmt4Ym2fH5TlOhMFkxMQq+Q
+3QZex0ctUiez5RjPt7cRB2McbHGeWNiTGPmvIAwTUwuSkoFx/YWgBu5U1VKyAXxk
+p64UG0yKiZ1bYu7gDmUUDr5nv2jE8SbAP6XtUQIDAQABAoIBAHoF2GhrGCysK+Ox
+AbKPD5YB+k9UDDCvUuFp6SSijm4kvKzwqqu4J0m6GeVgptgHhAVnMp6QNm/C9LpV
+...
+-----END RSA PRIVATE KEY-----
+```
+
 That's it! 
 
-run the app locally 
+### Run the app locally 
+
+install dependencies
+
+```
+    npm install
+```
+
+> On Windows, you'll need to install some dependencies first, check [ursa](https://www.npmjs.com/package/ursa) to know how to install it.
+
+run the app
 
 ```
     npm start
